@@ -22,6 +22,3 @@ Web platform used by the research team to capture questionnaire data from adoles
 
 ## Stack
 PostgreSQL · SQLAlchemy 2 (schema) · R Shiny (modules, `pool`, `shinymanager`, `shinyjs`) · Docker / docker-compose · Heroku (container stack).
-## Run locally
-## Deploy to Heroku
-The release phase in `heroku.yml` creates the tables and seeds the food catalogue. The app reads `DATABASE_URL` on Heroku and falls back to the local compose database otherwise.
