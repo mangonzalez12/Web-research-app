@@ -23,58 +23,7 @@ Web platform used by the research team to capture questionnaire data from adoles
 - **Records and downloads:** a table of who has answered what, and CSV downloads (including a combined one-row-per-participant file). Both require the user's password again, and downloads never include names.
 
 ## Stack
-
 PostgreSQL · SQLAlchemy 2 (schema) · R Shiny (modules, `pool`, `shinymanager`, `shinyjs`) · Docker / docker-compose · Heroku (container stack).
-
-```
-app/        R Shiny app (app.R, global.R, R/ modules, Dockerfile)
-database/   SQLAlchemy models, food catalogue seed, role setup, Dockerfile
-analysis/   export_data.py, simulate_data.py, graphs.R
-docs/       screenshots
-heroku.yml  build, release (seed) and run definition for Heroku
-matriz.sql  analysis matrix query
-```
-
 ## Run locally
-
-Requires Docker.
-
-```bash
-cp .env.example .env        # then edit .env and set a password for every user
-docker-compose up --build
-```
-
-Open http://localhost:3838 and sign in with one of the users listed in `APP_USERS`.
-The compose file uses throw-away development database passwords; do not reuse them anywhere real.
-
 ## Deploy to Heroku
-
-```bash
-heroku create <app-name> --stack container
-heroku addons:create heroku-postgresql:essential-0
-heroku config:set APP_USERS=user1,user2 APP_PASS_USER1=... APP_PASS_USER2=...   # one password per user
-heroku config:set PUBLIC_URL=https://<app-name>-<id>.herokuapp.com/
-git push heroku main
-```
-
 The release phase in `heroku.yml` creates the tables and seeds the food catalogue. The app reads `DATABASE_URL` on Heroku and falls back to the local compose database otherwise.
-
-## Privacy and security notes
-
-- Only a SHA-256 hash of each participant link token is stored; the link itself is shown once.
-- Links expire, can be revoked, and only open the questionnaires chosen for that participant. A saved questionnaire cannot be answered twice.
-- Passwords come from environment variables; the app refuses to start if one is missing.
-- Do not commit `.env`, exports or any real data (see `.gitignore`).
-
-## Analysis with fictitious data
-
-```bash
-cd analysis
-pip install -r requirements.txt
-python simulate_data.py          # writes simulated/exposoma_combinado_simulado.csv
-python export_data.py            # exports from a real database (needs DATABASE_URL), kept out of git
-```
-
-## License
-
-No license has been chosen yet; until one is added, all rights are reserved.
