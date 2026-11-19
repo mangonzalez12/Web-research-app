@@ -7,12 +7,10 @@ Web platform used by the research team to capture questionnaire data from adoles
 > **This repository contains no participant data.** Screenshots and sample files use simulated or fictitious data only.
 
 ## Screenshots
+<img width="659" height="703" alt="Team login" src="https://github.com/user-attachments/assets/585e7e64-b1e5-4f56-97e6-1cb1d8996684" />
+<img width="930" height="579" alt="Registration and search" src="https://github.com/user-attachments/assets/073b79c9-91eb-4147-bf4c-22fd540b9542" />
+<img width="1404" height="641" alt="CFCA form" src="https://github.com/user-attachments/assets/04a6d70b-d3cb-48bb-bb6a-697b3fce5b77" />
 
-| | |
-|---|---|
-| ![https://github.com/mangonzalez12/Web-research-app/blob/main/docs/screenshots/Team%20login.png](docs/screenshots/Team login) <br> **Team login** | ![Registration and search](docs/screenshots/02-registro-buscar.png) <br> **Registration and search by name** |
-| ![Personal link and QR](docs/screenshots/03-enlace-qr.png) <br> **Personal link and QR code** | ![Participant on a phone](docs/screenshots/04-participante-movil.png) <br> **Participant answering on a phone** |
-| ![CFCA form](docs/screenshots/05-cfca.png) <br> **Food frequency questionnaire (CFCA)** | ![Saved records](docs/screenshots/06-registros.png) <br> **Saved records (password-protected)** |
 
 ## What it does
 
