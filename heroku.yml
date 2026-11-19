@@ -1,0 +1,10 @@
+build:
+  docker:
+    web: app/Dockerfile
+    release: database/Dockerfile
+release:
+  image: release
+  command:
+    - python seed_food_items.py
+run:
+  web: R -e "shiny::runApp('/srv/shiny-server/app', host = '0.0.0.0', port = as.integer(Sys.getenv('PORT', 3838)))"

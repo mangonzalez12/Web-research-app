@@ -1,0 +1,25 @@
+# secrets
+.env
+*.Renviron
+
+# OS / editor
+.DS_Store
+
+# app exports contain participant data
+exports/
+analysis/
+
+# analysis: real/pilot participant data and outputs, never commit (minors)
+analysis/output/
+analysis/pilot_data/
+# simulated data is regenerated with analysis/simulate_data.py
+analysis/simulated/
+
+# Python
+.venv/
+__pycache__/
+
+# R session files (can contain data)
+.RData
+.Rhistory
+.Rproj.user/
